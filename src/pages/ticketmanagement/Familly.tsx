@@ -60,7 +60,7 @@ function Familly() {
       <Table
         columns={columns}
         dataSource={testFamillyData}
-        pagination={{pageSize: 6}} className='table'/>
+        pagination={{pageSize: 6}}/>
     </div>
   )
 }

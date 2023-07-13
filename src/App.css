@@ -1,13 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700;800&family=Fjalla+One&family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;500;600;700&display=swap');
+
+:root {
+  --text-color: #1E0D03;
+  --bg-color  : #F9F6F4;
+}
+
 * {
-  padding: 0;
-  margin: 0;
+  padding   : 0;
+  margin    : 0;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
-  text-align: center;
-  font-family:'Montserrat', sans-serif;
-  text-decoration: none;
-  list-style: none;
+  text-align : center;
+  font-family: 'Montserrat', sans-serif;
+  list-style : none;
+  min-height     : 100vh;
+}
+
+.App {
+  min-height          : 100vh;
+  display         : flex;
+  gap             : 3.6rem;
+  padding         : 1.7rem 3.2rem 3.2rem;
+  background-color: var(--bg-color);
+}
+
+.nav {
+  width: 20%;
+}
+
+ 
+/* min-height = min-height App - total padding */
+.main_container {
+  width : 80%;
+  height: 100%;
+  min-height: calc(100vh - 4.9rem); 
+  display: flex;
+  flex-direction: column;
+}
+
+.main_content {
+  background-color: #fff;
+  padding         : 2.4rem;
+  border-radius: 2.4rem;
+  flex: 1;
+}
+
+.content_header {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 5.4rem;
+  color: var(--text-color);
+  text-align: left;
+  margin-bottom: 2.4rem;
+}
+
+.content_nav {
+  
 }

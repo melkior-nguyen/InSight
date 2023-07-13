@@ -1,0 +1,46 @@
+.header {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    margin-bottom  : 2rem;
+}
+
+
+
+.header_info {
+    height     : 100%;
+    display    : flex;
+    align-items: center;
+    gap        : 2.4rem;
+}
+
+.header_info-ava {
+    height       : 4.8rem;
+    aspect-ratio : 1;
+    border-radius: 50%;
+    overflow     : hidden;
+}
+
+.header_info-ava img {
+    width          : 100%;
+    height         : 100%;
+    object-fit     : contain;
+    object-position: left;
+    cursor         : pointer;
+}
+
+.header_info-icon {
+    width       : 2.4rem;
+    aspect-ratio: 1;
+}
+
+.header_info-icon svg {
+    width : 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.header_info-icon:hover svg {
+    color: #FFB800;
+    transition: all 0.25s ease;
+}

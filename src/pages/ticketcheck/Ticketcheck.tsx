@@ -1,5 +1,6 @@
 import React from 'react'
 import './ticketcheck.css'
+import '../../antcustom.css'
 import { Search } from '../../components'
 import { AiOutlineSearch } from 'react-icons/ai'
 import type { ColumnsType } from 'antd/es/table'
@@ -57,10 +58,10 @@ function Ticketcheck() {
     <div className='ticketcheck main_content'>
       <h2 className='content_header'>Đối Soát Vé</h2>
 
-      <div className="content_nav ticketcheck_nav">
+      <div className="content_nav content_nav">
         <Search plholder='Tìm bằng số vé' icon={<AiOutlineSearch />} />
-        <div className="ticketcheck_nav-option">
-          <button className="ticketcheck_nav-export">
+        <div className="content_nav-option">
+          <button className="content_nav-export">
             {'Xuất file (.csv)'}
           </button>
         </div>
@@ -70,7 +71,7 @@ function Ticketcheck() {
         <Table
           columns={columns}
           dataSource={testFamillyData}
-          pagination={{ pageSize: 7 }} />
+          pagination={{ pageSize: 6 }} />
       </div>
     </div>
   )

@@ -26,7 +26,7 @@ function Event() {
       title: 'Tên Sự Kiện',
       dataIndex: 'type',
       render :(type):any=>{
-        if(type) return 'Hội chợ triễn lãm tiêu dùng 2023'
+        if(type) return 'Hội chợ triển lãm tiêu dùng 2023'
       }
     },
     {

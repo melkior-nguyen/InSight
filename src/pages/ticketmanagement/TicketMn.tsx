@@ -41,12 +41,12 @@ function TicketMn() {
 
       <div className="content_nav ticketmn_nav">
         <Search plholder='Tìm bằng số vé' icon={<AiOutlineSearch />} />
-        <div className="ticketmn_nav-option">
-          <button className="ticketmn_nav-filter">
+        <div className="content_nav-option">
+          <button className="content_nav-filter">
             <FiFilter />
             Lọc vé
           </button>
-          <button className="ticketmn_nav-export">
+          <button className="content_nav-export">
             {'Xuất file (.csv)'}
           </button>
         </div>

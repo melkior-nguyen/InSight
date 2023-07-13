@@ -44,48 +44,5 @@
     }
 }
 
-/* nav */
-.ticketmn_nav {
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
-}
 
-.ticketmn_nav-option {
-    display: flex;
-    gap    : 1rem;
-}
-
-.ticketmn_nav-filter,
-.ticketmn_nav-export {
-    height          : 4.8rem;
-    padding         : 1.1rem 1.6rem;
-    color           : #FF993C;
-    background-color: transparent;
-    border          : 1px solid currentColor;
-    border-radius   : 6px;
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
-    gap             : 1rem;
-    font-size       : 1.8rem;
-    font-weight     : 700;
-    line-height     : 2.6rem;
-    cursor          : pointer;
-}
-
-.ticketmn_nav-filter svg {
-    width : 24px;
-    height: 24px;
-}
-
-.ticketmn_nav-filter:active,
-.ticketmn_nav-export:active {
-    transform: translateY(2px);
-}
-
-/* content */
-.ticketmn_content {
-    
-}
 

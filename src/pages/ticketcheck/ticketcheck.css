@@ -3,44 +3,7 @@
     flex-direction: column;
 }
 
-.ticketcheck_nav {
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
-}
 
-.ticketcheck_nav-option {
-    display: flex;
-    gap    : 1rem;
-}
-
-.ticketcheck_nav-filter,
-.ticketcheck_nav-export {
-    height          : 4.8rem;
-    padding         : 1.1rem 1.6rem;
-    color           : #FF993C;
-    background-color: transparent;
-    border          : 1px solid currentColor;
-    border-radius   : 6px;
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
-    gap             : 1rem;
-    font-size       : 1.8rem;
-    font-weight     : 700;
-    line-height     : 2.6rem;
-    cursor          : pointer;
-}
-
-.ticketcheck_nav-filter svg {
-    width : 24px;
-    height: 24px;
-}
-
-.ticketcheck_nav-filter:active,
-.ticketcheck_nav-export:active {
-    transform: translateY(2px);
-}
 
 .ticketcheck_pack {
     margin-top     : 3rem;

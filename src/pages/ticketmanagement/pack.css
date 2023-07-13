@@ -6,18 +6,3 @@
     flex-direction : column;
     justify-content: space-between;
 }
-
-.ticketmn_lists {
-    flex: 1;
-    border: 1px solid #333
-}
-
-.ticketmn_pages {
-    border: 1px solid #333;
-    margin: 2rem 0;
-    text-align: center;
-}
-
-.table ul{
-    justify-content: center !important;
-}

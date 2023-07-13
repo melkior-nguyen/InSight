@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './antcustom.css'
 import { db } from './firebase/config'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //component

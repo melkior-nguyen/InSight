@@ -3,7 +3,7 @@ import './pack.css'
 import './familly.css'
 import { Table } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
-import { testData, dataType } from './testdata'
+import { testFamillyData, dataType } from '../../testdata'
 
 function Familly() {
   const columns: ColumnsType<dataType> = [
@@ -59,7 +59,7 @@ function Familly() {
     <div className='ticketmn_pack'>
       <Table
         columns={columns}
-        dataSource={testData}
+        dataSource={testFamillyData}
         pagination={{pageSize: 6}} className='table'/>
     </div>
   )

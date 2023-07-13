@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/insight/static/css/main.987299b3.css",
-    "main.js": "/insight/static/js/main.7a9c6a9d.js",
-    "static/js/787.17939cfc.chunk.js": "/insight/static/js/787.17939cfc.chunk.js",
-    "static/media/ava.jpg": "/insight/static/media/ava.019afb97420af2c07f41.jpg",
-    "index.html": "/insight/index.html",
-    "main.987299b3.css.map": "/insight/static/css/main.987299b3.css.map",
-    "main.7a9c6a9d.js.map": "/insight/static/js/main.7a9c6a9d.js.map",
-    "787.17939cfc.chunk.js.map": "/insight/static/js/787.17939cfc.chunk.js.map"
+    "main.css": "/InSight/static/css/main.987299b3.css",
+    "main.js": "/InSight/static/js/main.c082f37e.js",
+    "static/js/787.17939cfc.chunk.js": "/InSight/static/js/787.17939cfc.chunk.js",
+    "static/media/ava.jpg": "/InSight/static/media/ava.019afb97420af2c07f41.jpg",
+    "index.html": "/InSight/index.html",
+    "main.987299b3.css.map": "/InSight/static/css/main.987299b3.css.map",
+    "main.c082f37e.js.map": "/InSight/static/js/main.c082f37e.js.map",
+    "787.17939cfc.chunk.js.map": "/InSight/static/js/787.17939cfc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.987299b3.css",
-    "static/js/main.7a9c6a9d.js"
+    "static/js/main.c082f37e.js"
   ]
 }

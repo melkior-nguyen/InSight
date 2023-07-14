@@ -6,9 +6,7 @@
 
 
 .ticketcheck_pack {
-    margin-top     : 3rem;
     flex           : 1;
-    border         : 1px solid #333;
     display        : flex;
     flex-direction : column;
     justify-content: space-between;

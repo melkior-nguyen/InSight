@@ -3,13 +3,16 @@ import './pack.css'
 import { Table } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
 import { testEventData, dataType } from '../../testdata'
+import { GoDotFill } from 'react-icons/go'
 
-function Event() {
+function Event({numberSearch}:{numberSearch:string}) {
   const columns: ColumnsType<dataType> = [
     {
-      key: 'id',
+      key: 'index',
       title: 'STT',
-      dataIndex: 'id'
+      render: (text, record): any => {
+        return testEventData.indexOf(record) +1
+      }
     },
     {
       key: 'code',
@@ -19,14 +22,21 @@ function Event() {
     {
       key: 'number',
       title: 'Số vé',
-      dataIndex: 'number'
+      dataIndex: 'number',
+      filteredValue: [numberSearch],
+      onFilter: (value, record): any => {
+        if (value !== '') {
+          return record.number.toString().indexOf(value.toString()) !== -1
+        }
+        else return record.number
+      }
     },
     {
       key: 'type',
       title: 'Tên Sự Kiện',
       dataIndex: 'type',
-      render :(type):any=>{
-        if(type) return 'Hội chợ triển lãm tiêu dùng 2023'
+      render: (type): any => {
+        if (type) return 'Hội chợ triển lãm tiêu dùng 2023'
       }
     },
     {
@@ -34,9 +44,24 @@ function Event() {
       title: 'Tình trạng sử dụng',
       dataIndex: 'status',
       render: (status: number): any => {
-        if (status === 200) { return 'Đã sử dụng' }
-        else if (status === 404) { return 'Hết hạn' }
-        else if (status === 300) { return 'Chưa sử dụng' }
+        if (status === 200) {
+          return (<div className='status used'>
+            <GoDotFill />
+            <span>Đã sử dụng</span>
+          </div>)
+        }
+        else if (status === 404) {
+          return (<div className='status expired'>
+            <GoDotFill />
+            <span>Hết Hạn</span>
+          </div>)
+        }
+        else if (status === 300) {
+          return (<div className='status not_used'>
+            <GoDotFill />
+            <span>Chưa sử dụng</span>
+          </div>)
+        }
       }
     },
     {
@@ -66,7 +91,7 @@ function Event() {
       <Table
         columns={columns}
         dataSource={testEventData}
-        pagination={{ pageSize: 6 }} />
+        pagination={{ pageSize: 9 }} />
     </div>
   )
 }

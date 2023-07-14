@@ -9,7 +9,7 @@ import { FiFilter } from 'react-icons/fi'
 function TicketMn() {
   const [pack, setPack] = useState<string>('familly')
   const [activedPack, setActivedPack] = useState<string>('familly')
-
+  const [numberSearch, setNumberSearch] = useState<string>('')
   const handlePack = (pack: string) => {
     if (pack === 'familly') {
       setPack('familly')
@@ -19,7 +19,6 @@ function TicketMn() {
       setPack('event')
       setActivedPack('event')
     }
-
   }
 
   return (
@@ -40,7 +39,7 @@ function TicketMn() {
       </div>
 
       <div className="content_nav ticketmn_nav">
-        <Search plholder='Tìm bằng số vé' icon={<AiOutlineSearch />} />
+        <Search plholder='Tìm bằng số vé' icon={<AiOutlineSearch />} OnChange={(inputData: string) => setNumberSearch(inputData)} />
         <div className="content_nav-option">
           <button className="content_nav-filter">
             <FiFilter />
@@ -52,8 +51,8 @@ function TicketMn() {
         </div>
       </div>
 
-      {pack === 'familly' && <Familly />}
-      {pack === 'event' && <Event />}
+      {pack === 'familly' && <Familly numberSearch={numberSearch} />}
+      {pack === 'event' && <Event numberSearch={numberSearch} />}
     </div>
   )
 }

@@ -11,9 +11,11 @@ import Table from 'antd/es/table'
 function Ticketcheck() {
   const columns: ColumnsType<dataType> = [
     {
-      key: 'id',
+      key: 'index',
       title: 'STT',
-      dataIndex: 'id'
+      render: (text, record): any => {
+        return testFamillyData.indexOf(record) +1
+      }
     },
     {
       key: 'number',
@@ -71,7 +73,7 @@ function Ticketcheck() {
         <Table
           columns={columns}
           dataSource={testFamillyData}
-          pagination={{ pageSize: 6 }} />
+          pagination={{ pageSize: 9 }} />
       </div>
     </div>
   )

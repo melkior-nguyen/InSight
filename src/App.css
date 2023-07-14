@@ -57,7 +57,7 @@ body {
   line-height  : 5.4rem;
   color        : var(--text-color);
   text-align   : left;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.5rem;
 }
 
 /* content nav */
@@ -76,7 +76,7 @@ body {
 .content_nav-filter,
 .content_nav-export {
   height          : 4.8rem;
-  padding         : 1.1rem 1.6rem;
+  padding         : 1.1rem 2.4rem;
   color           : #FF993C;
   background-color: transparent;
   border          : 1px solid currentColor;

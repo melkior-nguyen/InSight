@@ -1,0 +1,186 @@
+.ticketmn_filter {
+    position        : fixed;
+    top             : 0;
+    right           : 0;
+    width           : 100%;
+    height          : 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index         : 1;
+    display         : flex;
+    align-items     : center;
+}
+
+
+.ticketmn_filter-wrap {
+    min-width       : 33%;
+    background-color: #fff;
+    margin          : auto;
+    padding         : 2.4rem;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    position        : relative;
+    border-radius   : 1.6rem;
+    animation: ticketmn_filter 0.25s ease-in-out;
+}
+
+@keyframes ticketmn_filter {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.ticketmn_filter-close {
+    position                 : absolute;
+    top                      : 4px;
+    right                    : 4px;
+    width                    : 3.2rem;
+    height                   : 2.4rem;
+    display                  : flex;
+    justify-content          : center;
+    align-items              : center;
+    border                   : 1px solid #FF993C;
+    border-top-right-radius  : 1.2rem;
+    border-bottom-left-radius: 1.2rem;
+    cursor                   : pointer;
+    background-color         : transparent;
+    transition               : all 0.25s linear;
+}
+
+.ticketmn_filter-close svg {
+    width     : 80%;
+    height    : 80%;
+    color     : #FF993C;
+    transition: all 0.25s linear;
+}
+
+.ticketmn_filter-close:hover {
+    background-color: #FF993C;
+}
+
+.ticketmn_filter-close:hover svg {
+    color: #fff;
+}
+
+
+/* form */
+.ticketmn_filter-form {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    gap           : 2rem;
+    width         : 100%;
+    display       : flex;
+    flex-direction: column;
+    align-items   : flex-start;
+}
+
+.ticketmn_filter-wrap h3 {
+    font-size    : 2.4rem;
+    line-height  : 3rem;
+    font-weight  : 700;
+    color        : #1E0D03;
+    margin-bottom: 2.4rem;
+}
+
+.ticketmn_filter-span {
+    font-size  : 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 500;
+}
+
+.ticketmn_filter-range {
+    width          : 100%;
+    display        : flex;
+    justify-content: space-between;
+}
+
+.ticketmn_filter-range-item {
+    display       : flex;
+    flex-direction: column;
+    align-content : flex-start;
+    gap           : 5px;
+    text-align    : left;
+}
+
+.ticketmn_filter-status {
+    display       : flex;
+    flex-direction: column;
+    align-items   : flex-start;
+    width         : 100%;
+    gap           : 5px;
+}
+
+.ticketmn_filter-status-list {
+    width          : 100%;
+    display        : flex;
+    justify-content: space-between;
+    gap            : 4rem;
+}
+
+.ticketmn_filter-status-radio {
+    display        : flex;
+    justify-content: flex-start;
+    align-items    : center;
+    gap            : 8px;
+    font-size      : 1.4rem;
+    line-height    : 1.95rem;
+    color          : #1E0D03;
+}
+
+.ticketmn_filter-gate {
+    width         : 100%;
+    display       : flex;
+    flex-direction: column;
+    align-items   : flex-start;
+    gap           : 1.4rem;
+}
+
+.ticketmn_filter-gate-list {
+    width          : 100%;
+    display        : flex;
+    justify-content: space-between;
+    flex-direction : row;
+    flex-wrap      : wrap;
+    row-gap        : 1.4rem;
+}
+
+.ticketmn_filter-gate-radio {
+    width          : 33%;
+    display        : flex;
+    justify-content: flex-start;
+    align-items    : center;
+    font-size      : 1.4rem;
+    line-height    : 1.95rem;
+    gap            : 8px;
+}
+
+.ticketmn_filter-btn {
+    align-self      : center;
+    padding         : 1rem 2.4rem;
+    color           : #FF993C;
+    background-color: transparent;
+    border          : 1px solid currentColor;
+    border-radius   : 6px;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    font-size       : 1.8rem;
+    font-weight     : 700;
+    line-height     : 2.6rem;
+    cursor          : pointer;
+}
+
+.ticketmn_filter-btn:hover {
+    background-color: #FF993C;
+    color           : #fff;
+    transition      : 0.25s linear;
+}

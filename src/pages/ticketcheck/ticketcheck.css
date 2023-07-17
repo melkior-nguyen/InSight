@@ -1,9 +1,25 @@
 .ticketcheck {
-    display       : flex;
-    flex-direction: column;
+    display         : flex;
+    gap             : 1.2rem;
+    background-color: transparent;
+    padding         : 0;
 }
 
+.sub_content {
+    background-color: #fff;
+    border-radius   : 2.4rem;
+    padding         : 2.4rem;
+    display         : flex;
+    flex-direction  : column;
+}
 
+.sub_content:first-child {
+    width: 75%;
+}
+
+.sub_content:last-child {
+    width: 25%;
+}
 
 .ticketcheck_pack {
     flex           : 1;
@@ -12,3 +28,126 @@
     justify-content: space-between;
 }
 
+/* filter */
+.ticketcheck_filter-form,
+.ticketcheck-filter {
+    display       : flex;
+    flex-direction: column;
+    align-items   : flex-start;
+    gap           : 2.4rem;
+}
+
+.ticketcheck-filter h3 {
+    font-size  : 2.4rem;
+    font-weight: 700;
+    line-height: 3rem;
+    color      : #1E0D03;
+}
+
+.ticketcheck_filter-select {
+    width        : 100%;
+    border-radius: 8px;
+    position     : relative;
+    overflow     : hidden;
+}
+
+.ticketcheck_filter-select select {
+    width           : 100%;
+    appearance      : none;
+    position        : relative;
+    padding         : 0.5rem 1.6rem;
+    line-height     : 19.5px;
+    font-size       : 1.6rem;
+    border          : none;
+    background-color: #F1F4F8;
+    color           : #7C7D95;
+}
+
+.ticketcheck_filter-select select:focus {
+    outline: none;
+}
+
+.ticketcheck_filter-select::after {
+    content     : "";
+    width       : 0;
+    height      : 0;
+    border      : 5px solid transparent;
+    border-color: black transparent transparent transparent;
+    position    : absolute;
+    top         : 50%;
+    right       : 1.6rem;
+    transform   : translateY(-50%);
+}
+
+.ticketcheck_filter-span {
+    font-size  : 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 600;
+    color      : #1E0D03;
+    flex       : 1;
+    text-align : left;
+}
+
+.ticketcheck_filter-checked {
+    width         : 100%;
+    display       : flex;
+    flex-direction: column;
+    align-items   : flex-start;
+}
+
+.ticketcheck_filter-radio {
+    width  : 100%;
+    padding: 1rem 1.6rem;
+
+}
+
+.ticketcheck_filter-radio label {
+    width      : 100%;
+    display    : flex;
+    align-items: center;
+    gap        : 1.2rem;
+    font-size  : 1.6rem;
+    line-height: 2rem;
+}
+
+
+/* filter type & date */
+.ticketcheck_filter-type,
+.ticketcheck_filter-from,
+.ticketcheck_filter-to {
+    width          : 100%;
+    display        : flex;
+    justify-content: flex-start;
+    align-items    : center;
+    padding-right  : 2rem;
+}
+
+.ticketcheck_filter-type span:last-child {
+    width      : 50%;
+    font-size  : 1.6rem;
+    line-height: 1.95rem;
+    text-align : left;
+}
+
+.ticketcheck_date {
+    width: 50%;
+}
+
+.ticketcheck_filter-btn {
+    margin          : 0 auto;
+    padding         : 1.1rem 2.4rem;
+    color           : #FF993C;
+    border          : 1px solid currentColor;
+    border-radius   : 8px;
+    font-size       : 1.8rem;
+    line-height     : 2.6rem;
+    font-weight     : 700;
+    background-color: transparent;
+    cursor          : pointer;
+}
+
+.ticketcheck_filter-btn:hover {
+    background-color: #FF993C;
+    color           : #fff;
+    transition      : 0.25s linear;
+}

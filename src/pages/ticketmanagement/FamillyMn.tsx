@@ -1,17 +1,18 @@
-import React from 'react'
-import './pack.css'
+import React, { useState } from 'react'
+import './packmn.css'
 import { Table } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
-import { testEventData, dataType } from '../../testdata'
+import { testFamillyData, dataType } from '../../testdata'
 import { GoDotFill } from 'react-icons/go'
 
-function Event({numberSearch}:{numberSearch:string}) {
+
+function Familly({ numberSearch, filterInfo }: any) {
   const columns: ColumnsType<dataType> = [
     {
       key: 'index',
       title: 'STT',
-      render: (text, record): any => {
-        return testEventData.indexOf(record) +1
+      render: (value, record, index): any => {
+        return testFamillyData.indexOf(value) + 1
       }
     },
     {
@@ -29,14 +30,6 @@ function Event({numberSearch}:{numberSearch:string}) {
           return record.number.toString().indexOf(value.toString()) !== -1
         }
         else return record.number
-      }
-    },
-    {
-      key: 'type',
-      title: 'Tên Sự Kiện',
-      dataIndex: 'type',
-      render: (type): any => {
-        if (type) return 'Hội chợ triển lãm tiêu dùng 2023'
       }
     },
     {
@@ -62,6 +55,13 @@ function Event({numberSearch}:{numberSearch:string}) {
             <span>Chưa sử dụng</span>
           </div>)
         }
+      },
+      filteredValue: [filterInfo.status],
+      onFilter: (value, record): any => {
+        if (value === 'all') return record.status
+        if (value === 'used') return record.status === 200
+        if (value === 'not_used') return record.status === 300
+        if (value === 'expired') return record.status === 404
       }
     },
     {
@@ -78,22 +78,37 @@ function Event({numberSearch}:{numberSearch:string}) {
       key: 'gate',
       title: 'Cổng Check - In',
       dataIndex: 'gate',
-      render: (gate): any => {
+      render: (gate: number): string => {
         if (gate === 1) return 'Cổng 1'
         if (gate === 2) return 'Cổng 2'
         if (gate === 3) return 'Cổng 3'
+        return '_'
+      },
+      filteredValue: [filterInfo.gates],
+      onFilter: (value, record): any => {
+        console.log(value)
+        if (value.toString().indexOf('all') !== -1) return record.gate
+
+        const gateArr = []
+        if (value.toString().indexOf('gate_1') !== -1) gateArr.push(1) 
+        if (value.toString().indexOf('gate_2') !== -1) gateArr.push(2) 
+        if (value.toString().indexOf('gate_3') !== -1) gateArr.push(3) 
+        if (value.toString().indexOf('gate_4') !== -1) gateArr.push(4) 
+        if (value.toString().indexOf('gate_5') !== -1) gateArr.push(5) 
+        return gateArr.includes(record.gate)
       }
     },
   ]
+
 
   return (
     <div className='ticketmn_pack'>
       <Table
         columns={columns}
-        dataSource={testEventData}
+        dataSource={testFamillyData}
         pagination={{ pageSize: 9 }} />
     </div>
   )
 }
 
-export default Event
+export default Familly

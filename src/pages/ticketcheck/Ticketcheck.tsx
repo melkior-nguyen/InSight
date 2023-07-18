@@ -10,7 +10,12 @@ import { DatePicker } from 'antd'
 function Ticketcheck() {
   const [pack, setPack] = useState<string>('familly')
   const [numberSearch, setNumberSearch] = useState<string>('')
+  const [checkRadio, setCheckRadio] = useState<string>('all')
+  const [dateStart, setDateStart] = useState<string>('')
+  const [dateEnd, setDateEnd] = useState<string>('')
+  const [filterInfo, setFilterInfo] = useState<{ checked: string, rangeDate: string[] }>({ checked: 'all', rangeDate: ['', ''] })
 
+  //handle pack toggle
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === 'familly') {
       setPack('familly')
@@ -21,6 +26,30 @@ function Ticketcheck() {
     }
   }
 
+  //handle check radio
+  const handleCheckRadio = (check: string) => {
+    if (check === 'all') setCheckRadio('all')
+    if (check === 'checked') setCheckRadio('checked')
+    if (check === 'not_checked') setCheckRadio('not_checked')
+  }
+
+  //handle date range
+  const handleDateStart = (date: any, dateString: string) => {
+    setDateStart(dateString)
+  }
+  const handleDateEnd = (date: any, dateString: string) => {
+    setDateEnd(dateString)
+  }
+
+  //handle submit
+  const handleFilterSubmit = (e: any) => {
+    e.preventDefault()
+    const filterInfo = {
+      checked: checkRadio,
+      rangeDate: [dateStart, dateEnd]
+    }
+    setFilterInfo(filterInfo)
+  }
 
   return (
     <div className='ticketcheck main_content'>
@@ -28,16 +57,21 @@ function Ticketcheck() {
       <div className="sub_content">
         <h2 className='content_header'>Đối Soát Vé</h2>
         <div className="content_nav">
-          <Search plholder='Tìm bằng số vé' icon={<AiOutlineSearch />}  OnChange={(inputData: string) => setNumberSearch(inputData)}/>
+          <Search plholder='Tìm bằng số vé' icon={<AiOutlineSearch />} OnChange={(inputData: string) => setNumberSearch(inputData)} />
           <div className="content_nav-option">
-            <button className="content_nav-export">
-              {'Xuất file (.csv)'}
-            </button>
+            {filterInfo.checked === 'not_checked' ?
+              <button className="content_nav-check">
+                {'Chốt đối soát'}
+              </button> :
+              <button className="content_nav-export">
+                {'Xuất file (.csv)'}
+              </button>
+            }
           </div>
         </div>
 
-        {pack === 'familly' && <FamillyCheck numberSearch={numberSearch}/>}
-        {pack === 'event' && <EventCheck numberSearch={numberSearch}/>}
+        {pack === 'familly' && <FamillyCheck numberSearch={numberSearch} filterInfo={filterInfo} />}
+        {pack === 'event' && <EventCheck numberSearch={numberSearch} filterInfo={filterInfo} />}
       </div>
       {/* filter */}
       <div className="sub_content ticketcheck-filter">
@@ -49,25 +83,25 @@ function Ticketcheck() {
           </select>
         </div>
 
-        <form onSubmit={(e) => e.preventDefault()} className='ticketcheck_filter-form'>
+        <form onSubmit={(e) => handleFilterSubmit(e)} className='ticketcheck_filter-form'>
 
           <div className="ticketcheck_filter-checked">
             <span className='ticketcheck_filter-span'>Tình trạng đối soát</span>
             <div className="ticketcheck_filter-radio">
               <label htmlFor='radio-all'>
-                <input type="radio" value='all' name='ticketcheck_radio' id='radio-all'></input>
+                <input type="radio" value='all' checked={checkRadio === 'all'} id='radio-all' onClick={() => handleCheckRadio('all')} />
                 Tất cả
               </label>
             </div>
             <div className="ticketcheck_filter-radio">
               <label htmlFor='radio-checked'>
-                <input type="radio" value='checked' name='ticketcheck_radio' id='radio-checked' />
+                <input type="radio" value='checked' checked={checkRadio === 'checked'} id='radio-checked' onClick={() => handleCheckRadio('checked')} />
                 Đã đối soát
               </label>
             </div>
             <div className="ticketcheck_filter-radio">
               <label htmlFor='radio-not_checked'>
-                <input type="radio" value='not_checked' name='ticketcheck_radio' id='radio-not_checked' />
+                <input type="radio" value='not_checked' checked={checkRadio === 'not_checked'} id='radio-not_checked' onClick={() => handleCheckRadio('not_checked')} />
                 Chưa đối soát
               </label>
             </div>
@@ -80,12 +114,12 @@ function Ticketcheck() {
 
           <div className="ticketcheck_filter-from">
             <span className='ticketcheck_filter-span'>Từ ngày</span>
-            <DatePicker className='ticketcheck_date'/>
+            <DatePicker className='ticketcheck_date' placeholder='Chọn ngày' onChange={handleDateStart} />
           </div>
 
           <div className="ticketcheck_filter-to">
             <span className='ticketcheck_filter-span'>Đến ngày</span>
-            <DatePicker className='ticketcheck_date'/>
+            <DatePicker className='ticketcheck_date' placeholder='Chọn ngày' onChange={handleDateEnd} />
           </div>
           <button type='submit' className='ticketcheck_filter-btn'>Lọc</button>
         </form>

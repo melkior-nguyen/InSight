@@ -12,10 +12,9 @@ function TicketMn() {
   const [filterLayout, setFilterLayout] = useState<boolean>(false)
   const [activedPack, setActivedPack] = useState<string>('familly')
   const [numberSearch, setNumberSearch] = useState<string>('')
-
   //filter information
-  const [filterInfo, setFilterInfo] = useState<{status:string, gates: string[]}>({status: 'all', gates : ['all']}) 
-
+  const [filterInfo, setFilterInfo] = useState<{ rangeDate: string[], status: string, gates: string[] }>({ rangeDate: ['', ''], status: 'all', gates: ['all'] })
+  //Toggle pack function
   const handlePack = (pack: string) => {
     if (pack === 'familly') {
       setPack('familly')
@@ -47,7 +46,7 @@ function TicketMn() {
       <div className="content_nav ticketmn_nav">
         <Search plholder='Tìm bằng số vé' icon={<AiOutlineSearch />} OnChange={(inputData: string) => setNumberSearch(inputData)} />
         <div className="content_nav-option">
-          <button className="content_nav-filter" onClick={()=>setFilterLayout(true)}>
+          <button className="content_nav-filter" onClick={() => setFilterLayout(true)}>
             <FiFilter />
             Lọc vé
           </button>
@@ -57,9 +56,9 @@ function TicketMn() {
         </div>
       </div>
 
-      {filterLayout && <FilterMn handleCloseBtn={()=>{setFilterLayout(false)}} handleFilterInfo = {(data:{status:string, gates: string[]})=>{setFilterInfo(data)}}/>}
-      {pack === 'familly' && <Familly numberSearch={numberSearch} filterInfo = {filterInfo}/>}
-      {pack === 'event' && <Event numberSearch={numberSearch} filterInfo = {filterInfo}/>}
+      {filterLayout && <FilterMn handleCloseBtn={() => { setFilterLayout(false) }} handleFilterInfo={( data: { rangeDate: string[],status: string, gates: string[] }) => { setFilterInfo(data) }} />}
+      {pack === 'familly' && <Familly numberSearch={numberSearch} filterInfo={filterInfo} />}
+      {pack === 'event' && <Event numberSearch={numberSearch} filterInfo={filterInfo} />}
 
 
     </div>

@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import './antcustom.css'
 import './custominput.css'
-import { db } from './firebase/config'
+import {db} from './firebase/config'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useAppSelector, useAppDispatch } from './hook';
 //component
 import { Navbar, Header } from './components';
 //pages
 import { Home, TicketMn, Ticketcheck, Setting } from './pages';
+import { fetchFamillyTickets } from './redux/ticketslice';
 
 function App() {
-
+  
   return (
     <Router>
       <div className="App">

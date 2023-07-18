@@ -94,3 +94,15 @@
 .ant-pagination-item-link {
     color: #FF993C !important;
 }
+
+/* date picker */
+.ant-picker input {
+    font-size: 1.2rem !important;
+    color: #A5A8B1 !important;
+}
+.ant-picker input::placeholder {
+    color: #A5A8B1 !important;
+}
+.ant-picker-suffix {
+    color: #FF993C !important
+}

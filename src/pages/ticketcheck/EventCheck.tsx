@@ -1,16 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './packcheck.css'
 import { Table } from 'antd'
 import { testEventData, dataType } from '../../testdata'
 import type { ColumnsType } from 'antd/es/table'
+import { fetchEventTickets } from '../../redux/ticketslice'
+import { useAppDispatch, useAppSelector } from '../../hook'
 
-function EventCheck({numberSearch}:{numberSearch:string}) {
+function EventCheck({ numberSearch, filterInfo }: any) {
+  const eventData = useAppSelector(state => state.tickets.ticketsEventList)
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchEventTickets())
+  }, [dispatch])
+
+
+
   const columns: ColumnsType<dataType> = [
     {
       key: 'index',
       title: 'STT',
       render: (text, record): any => {
-        return testEventData.indexOf(record) + 1
+        return eventData.indexOf(record) + 1
       }
     },
     {
@@ -36,7 +47,18 @@ function EventCheck({numberSearch}:{numberSearch:string}) {
     {
       key: 'date',
       title: 'Ngày sử dụng',
-      dataIndex: 'date'
+      dataIndex: 'date',
+      filteredValue: [filterInfo.rangeDate],
+      onFilter: (value, record): any => {
+        const rangeArr = value.toString().split(',') //[yyyy-mm-dd, yyyy-mm-dd]
+        const dateArr = record.date.split('/') // [dd,mm,yyyy]
+        const convertDate = `${dateArr[2]}-${dateArr[1]}-${dateArr[0]}` // yyyy-mm-dd
+
+        //incase no set filter
+        if (value == 'undefined' || rangeArr[0] === '' && rangeArr[1] === '') return record.date
+        //filter with range date
+        if (convertDate <= rangeArr[1] && convertDate >= rangeArr[0]) return record.date
+      }
     },
     {
       key: 'gate',
@@ -54,6 +76,8 @@ function EventCheck({numberSearch}:{numberSearch:string}) {
         if (gate === 1) return 'Cổng 1'
         if (gate === 2) return 'Cổng 2'
         if (gate === 3) return 'Cổng 3'
+        if (gate === 4) return 'Cổng 4'
+        if (gate === 5) return 'Cổng 5'
         return '_'
       }
     },
@@ -62,8 +86,14 @@ function EventCheck({numberSearch}:{numberSearch:string}) {
       title: '',
       dataIndex: 'checked',
       render: (checked): any => {
-        if (checked) return 'Đã đối soát'
-        else return 'Chưa đối soát'
+        if (checked) return <span style={{ color: '#FD5959' }}>Đã đối soát</span>
+        else return <span style={{ color: '#A5A8B1' }}>Chưa đối soát</span>
+      },
+      filteredValue: [filterInfo.checked],
+      onFilter: (value, record): any => {
+        if (value === 'all') return record.checked === true || record.checked === false
+        if (value === 'checked') return record.checked === true
+        if (value === 'not_checked') return record.checked === false
       }
     },
 
@@ -72,8 +102,8 @@ function EventCheck({numberSearch}:{numberSearch:string}) {
     <div className='ticketcheck_pack'>
       <Table
         columns={columns}
-        dataSource={testEventData}
-        pagination={{ pageSize: 10 }} />
+        dataSource={eventData}
+        pagination={{ pageSize: 10, showSizeChanger: false  }} />
     </div>
   )
 }

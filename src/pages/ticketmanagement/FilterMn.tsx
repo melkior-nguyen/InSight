@@ -6,6 +6,9 @@ import { DatePicker } from 'antd'
 function FilterMn({ handleCloseBtn, handleFilterInfo }: any) {
     const [statusRadio, setStatusRadio] = useState<string>('all')
     const [gateCheckbox, setGateCheckbox] = useState<string[]>(['all'])
+    const [dateStart, setDateStart] = useState<string>('')
+    const [dateEnd, setDateEnd] = useState<string>('')
+
 
     const handleStatusRadio = (status: string) => {
         if (status === 'all') setStatusRadio('all')
@@ -40,15 +43,23 @@ function FilterMn({ handleCloseBtn, handleFilterInfo }: any) {
         }
     }
 
+    const handleDateStart = (date: any, dateString : string) => {
+        setDateStart(dateString)
+    }
+    const handleDateEnd = (date: any, dateString : string) => {
+        setDateEnd(dateString)
+    }
     const handleFilterSubmit = (e: any) => {
         e.preventDefault()
         const filterData = {
+            rangeDate: [dateStart,dateEnd],
             status: statusRadio,
             gates: gateCheckbox
         }
         handleFilterInfo(filterData)
         handleCloseBtn()
     }
+
 
     return (
         <div className='ticketmn_filter'>
@@ -59,11 +70,11 @@ function FilterMn({ handleCloseBtn, handleFilterInfo }: any) {
                     <div className="ticketmn_filter-range">
                         <div className="ticketmn_filter-range-item">
                             <span className='ticketmn_filter-span'>Từ ngày</span>
-                            <DatePicker />
+                            <DatePicker placeholder='Chọn ngày' onChange={handleDateStart} />
                         </div>
                         <div className="ticketmn_filter-range-item">
                             <span className='ticketmn_filter-span'>Đến ngày</span>
-                            <DatePicker />
+                            <DatePicker placeholder='Chọn ngày' onChange={handleDateEnd} />
                         </div>
                     </div>
                     <div className="ticketmn_filter-status">

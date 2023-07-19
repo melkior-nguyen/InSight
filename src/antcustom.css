@@ -99,6 +99,11 @@
 .ant-picker input {
     font-size: 1.2rem !important;
     color: #A5A8B1 !important;
+    width: max-content !important;
+}
+.ant-picker input {
+    min-width: 65px !important;
+    width: 65px !important;
 }
 .ant-picker input::placeholder {
     color: #A5A8B1 !important;

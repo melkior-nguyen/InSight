@@ -9,6 +9,7 @@ import { GoDotFill } from 'react-icons/go'
 import Update from './Update'
 import { useAppDispatch, useAppSelector } from '../../hook'
 import { fetchPackManager } from '../../redux/ticketslice'
+import Add from './Add'
 
 type dataType = {
   code: string,
@@ -23,14 +24,15 @@ type dataType = {
 function Setting() {
   const [updateLayout, setUpdateLayout] = useState<boolean>(false)
   const [indexUpdate, setIndexUpdate] = useState<number>(0)
+  const [addLayout, setAddLayout] = useState<boolean>(false)
 
   // get pack list from firestore
-  const packList = useAppSelector(state=> state.tickets.packManager)
+  const packList = useAppSelector(state => state.tickets.packManager)
   const dispatch = useAppDispatch()
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(fetchPackManager())
-  },[dispatch])
+  }, [dispatch])
 
   const columns: ColumnsType<dataType> = [
     {
@@ -130,7 +132,7 @@ function Setting() {
           <button className="content_nav-filter">
             Xuất file (.csv)
           </button>
-          <button className="content_nav-check">
+          <button className="content_nav-check" onClick={() => setAddLayout(true)}>
             Thêm gói vé
           </button>
         </div>
@@ -144,10 +146,13 @@ function Setting() {
         />
       </div>
 
-      {updateLayout && <Update 
-      handleUpdateClose={() => setUpdateLayout(false)} 
-      updateData={packList[indexUpdate]} 
-      index = {indexUpdate}
+      {addLayout && <Add handleAddClose={()=> setAddLayout(false)}/>}
+
+
+      {updateLayout && <Update
+        handleUpdateClose={() => setUpdateLayout(false)}
+        updateData={packList[indexUpdate]}
+        index={indexUpdate}
       />}
 
     </div>

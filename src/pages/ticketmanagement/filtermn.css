@@ -21,23 +21,10 @@
     align-items     : center;
     position        : relative;
     border-radius   : 1.6rem;
-    animation: ticketmn_filter 0.25s ease-in-out;
+    animation: layoutAnimation 0.25s ease-in-out;
 }
 
-@keyframes ticketmn_filter {
-    0% {
-        opacity: 0;
-        transform: translateY(-50%);
-    }
-    70% {
-        opacity: 1;
-        transform: translateY(10%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 .ticketmn_filter-close {
     position                 : absolute;
     top                      : 4px;

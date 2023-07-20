@@ -10,7 +10,6 @@ function Home() {
       <h1>Home</h1>
       <div className="home_dashboard-top">
         <DatePicker />
-
       </div>
       <div className="home_dashboard-top">
         <DatePicker />

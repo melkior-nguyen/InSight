@@ -1,5 +1,4 @@
-
-.setting_update {
+.setting_add {
     position        : fixed;
     top             : 0;
     right           : 0;
@@ -11,7 +10,7 @@
     align-items     : center;
 }
 
-.setting_update-form {
+.setting_add-form {
     min-width       : 33%;
     background-color: #fff;
     margin          : auto;
@@ -25,7 +24,12 @@
     animation       : layoutAnimation 0.25s ease-in-out;
 }
 
-.setting_update-form h3 {
+.setting_add-form>div {
+    width  : 100%;
+    display: flex;
+}
+
+.setting_add-form h3 {
     font-size    : 2.4rem;
     line-height  : 3rem;
     font-weight  : 700;
@@ -33,73 +37,59 @@
     margin-bottom: 2.4rem;
 }
 
-.update_span {
+.add_span {
     font-size  : 1.6rem;
     line-height: 2.6rem;
     font-weight: 500;
-    position: relative;
-}
-.update_info-code .update_span::before {
-    content: '*';
-    position: absolute;
-    top: 0;
-    right: -0.5rem;
-    width: 1px;
-    height: 1px;
-    font-size: 1.6rem;
-    color: #FD5959
+    position   : relative;
 }
 
-.setting_update-form>div {
-    width  : 100%;
-    display: flex;
+.add_info-name .add_span::before {
+    content  : '*';
+    position : absolute;
+    top      : 0;
+    right    : -0.5rem;
+    width    : 1px;
+    height   : 1px;
+    font-size: 1.6rem;
+    color    : #FD5959
 }
 
 /* info */
-.setting_update-info {
+.setting_add-info {
     justify-content: space-between;
 }
 
-.update_info-code,
-.update_info-name {
+.add_info-name {
     display       : flex;
     flex-direction: column;
     align-items   : flex-start;
     gap           : 5px;
-    width         : 50%;
+    width         : 60%;
 }
 
-.update_info-code input,
-.update_info-name input {
+.add_info-name input {
     padding      : 1rem 1.6rem;
     border       : 1px solid #A5A8B1;
     border-radius: 8px;
     font-size    : 1.6rem;
     line-height  : 1.95rem;
     color        : var(--text-color);
+    width        : 100%;
 }
 
-.update_info-code input:focus,
-.update_info-name input:focus {
+.add_info-name input:focus {
     border : 1px solid transparent;
     outline: 1px solid #FF993C;
 }
 
-.update_info-code input {
-    width: 80%;
-}
-
-.update_info-name input {
-    width: 100%;
-}
-
 /* date */
-.setting_update-date {
+.setting_add-date {
     justify-content: space-between;
 }
 
-.update_date-buy,
-.update_date {
+.add_date-buy,
+.add_date {
     display       : flex;
     flex-direction: column;
     align-items   : flex-start;
@@ -107,7 +97,7 @@
     gap           : 5px;
 }
 
-.update_date-wrap {
+.add_date-wrap {
     width          : 100%;
     display        : flex;
     justify-content: flex-start;
@@ -116,13 +106,13 @@
 }
 
 /* price */
-.setting_update-price {
+.setting_add-price {
     flex-direction: column;
     gap           : 5px;
     align-items   : flex-start;
 }
 
-.update_price-wrap {
+.add_price-wrap {
     width      : 100%;
     display    : flex;
     align-items: center;
@@ -132,7 +122,7 @@
     color      : var(--text-color);
 }
 
-.update_price-wrap input[type='text'] {
+.add_price-wrap input[type='text'] {
     border          : none;
     border-radius   : 8px;
     padding         : 1rem 1.2rem;
@@ -140,26 +130,27 @@
     width           : 20%;
 }
 
-.update_price-wrap input[type='text']:focus {
+.add_price-wrap input[type='text']:focus {
     outline: 1px solid #FF993C;
     border : none;
 }
 
 /* status */
-.setting_update-status {
+
+.setting_add-status {
     flex-direction: column;
     align-items   : flex-start;
     gap           : 5px;
 }
 
-.update_status-select {
+.add_status-select {
     width        : 30%;
     border-radius: 8px;
     position     : relative;
     overflow     : hidden;
 }
 
-.update_status-select select {
+.add_status-select select {
     width           : 100%;
     appearance      : none;
     position        : relative;
@@ -171,11 +162,11 @@
     color           : #7C7D95;
 }
 
-.update_status-select select:focus {
+.add_status-select select:focus {
     outline: none;
 }
 
-.update_status-select::after {
+.add_status-select::after {
     content     : "";
     width       : 0;
     height      : 0;
@@ -186,26 +177,26 @@
     right       : 1.6rem;
     transform   : translateY(-50%);
 }
+
 /* btn */
-.setting_update-btns {
-    width: 100%;
-    display: flex;
+.setting_add-btns {
+    width          : 100%;
+    display        : flex;
     justify-content: center;
-    align-items: center;
-    gap: 2.4rem;
+    align-items    : center;
+    gap            : 2.4rem;
 }
 
 /* note */
-
-.setting_update-note {
-    display: flex;
+.setting_add-note {
+    display        : flex;
     justify-content: flex-start;
-    align-items: center;
-    gap: 5px;
-    color: rgb(30, 13, 3, 0.5);
+    align-items    : center;
+    gap            : 5px;
+    color          : rgb(30, 13, 3, 0.5);
 }
 
-.setting_update-note span {
-    color: #FD5959;
+.setting_add-note span {
+    color    : #FD5959;
     font-size: 1.6rem;
 }

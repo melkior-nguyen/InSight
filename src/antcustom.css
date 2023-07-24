@@ -96,6 +96,9 @@
 }
 
 /* date picker */
+.ant-picker {
+    height: 3rem;
+}
 .ant-picker input {
     font-size: 1.2rem !important;
     color: #A5A8B1 !important;

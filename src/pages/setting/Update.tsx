@@ -55,10 +55,13 @@ function Update({ handleUpdateClose, updateData, index }: any) {
         // check time
         if (updatedInfo.date === updatedInfo.date_buy) {
             if (dateTime && dateBuyTime) {
-                if (dateTime.isBefore(dateBuyTime)) alert('Thời gian hết hạn phải sau thời gian áp dụng trong cùng một ngày')
-                return
+                if (dateTime.isBefore(dateBuyTime)) {
+                    alert('Thời gian hết hạn phải sau thời gian áp dụng trong cùng một ngày')
+                    return
+                }
             }
         }
+
         //yyyy-mm-dd => dd/mm/yyyy
         const newUpdatedInfo = { ...updatedInfo }
         if (updatedInfo.date.indexOf('-') !== -1) {

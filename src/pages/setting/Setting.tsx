@@ -63,14 +63,7 @@ function Setting() {
       dataIndex: 'price',
       render: (value) => {
         if (value !== '') {
-          const valueArr = value.split('')
-          if (valueArr.length <= 3) {
-            return `${value} VND`
-          } else {
-            valueArr.splice((valueArr.length - 3), 0, '.')
-            const renderValue = valueArr.join('')
-            return `${renderValue} VND`
-          }
+          return `${new Intl.NumberFormat('en-US').format(value)} VND`
         }
       }
     },
@@ -80,14 +73,7 @@ function Setting() {
       dataIndex: 'comboPrice',
       render: (value, record, index) => {
         if (value !== '') {
-          const valueArr = value.split('')
-          if (valueArr.length <= 3) {
-            return `${value} VND / ${packList[index].quantity} vé`
-          } else {
-            valueArr.splice((valueArr.length - 3), 0, '.')
-            const renderValue = valueArr.join('')
-            return `${renderValue} VND / ${packList[index].quantity} vé`
-          }
+          return `${new Intl.NumberFormat('en-US').format(value)} VND / ${packList[index].quantity} vé`
         }
       }
     },
@@ -146,7 +132,7 @@ function Setting() {
         />
       </div>
 
-      {addLayout && <Add handleAddClose={()=> setAddLayout(false)}/>}
+      {addLayout && <Add handleAddClose={() => setAddLayout(false)} />}
 
 
       {updateLayout && <Update
@@ -166,11 +152,6 @@ export default Setting
 
 
 
-// setUpdateData = {(data:any)=> setPackData(prev=> {
-//   const newUpdateData = [...prev]
-//   newUpdateData[indexUpdate] = data
-//   return newUpdateData
-// })}
 
 
 
@@ -181,37 +162,3 @@ export default Setting
 
 
 
-
-
-
-
-
-// const handleFamAdd = () => {
-//   let ranNum
-//   const dummyData = {
-//     code: `ALTA${ranNum = 9999 + Math.floor(Math.random() * 10000)}`,
-//     number: 5421900 + Math.floor(Math.floor(Math.random() * 100000)),
-//     status: (Math.floor(Math.random() * 2)) === 0 ? 404 : 300,
-//     date: '12/07/2023',
-//     date_buy: '12/07/2023',
-//     gate: 5,
-//     checked: false,
-//     type: 'familly'
-//   }
-//   dispatch(addFamillyTickets(dummyData))
-// }
-
-// const handleEventAdd = () => {
-//   let ranNum
-//   const dummyData = {
-//     code: `ALTA${ranNum = 9999 + Math.floor(Math.random() * 10000)}`,
-//     number: 5421900 + Math.floor(Math.floor(Math.random() * 100000)),
-//     status: (Math.floor(Math.random() * 2)) === 0 ? 300 : 404,
-//     date: '12/07/2023',
-//     date_buy: '12/07/2023',
-//     gate: 1,
-//     checked: false,
-//     type: 'familly'
-//   }
-//   dispatch(addEventTickets(dummyData))
-// }

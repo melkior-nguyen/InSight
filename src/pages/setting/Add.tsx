@@ -17,15 +17,15 @@ function Add({ handleAddClose }: any) {
                     <div className="add_date-buy">
                         <span className='add_span'>Ngày áp dụng</span>
                         <div className="add_date-wrap">
-                            <DatePicker />
-                            <TimePicker />
+                            <DatePicker placeholder='Chọn ngày'/>
+                            <TimePicker placeholder='Chọn giờ'/>
                         </div>
                     </div>
                     <div className="add_date">
                         <span className='add_span'>Ngày hết hạn</span>
                         <div className="add_date-wrap">
-                            <DatePicker />
-                            <TimePicker />
+                            <DatePicker placeholder='Chọn ngày'/>
+                            <TimePicker placeholder='Chọn giờ'/>
                         </div>
                     </div>
                 </div>

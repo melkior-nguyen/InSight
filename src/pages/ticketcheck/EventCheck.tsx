@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './packcheck.css'
 import { Table } from 'antd'
-import { testEventData, dataType } from '../../testdata'
+import {dataType } from '../../testdata'
 import type { ColumnsType } from 'antd/es/table'
 import { fetchEventTickets } from '../../redux/ticketslice'
 import { useAppDispatch, useAppSelector } from '../../hook'

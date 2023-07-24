@@ -96,7 +96,6 @@ const ticketSlice = createSlice({
             .addCase(updatePackManager.fulfilled, (state, action) => {
                 const updatePack = { ...action.payload }
                 delete updatePack.index
-                console.log(updatePack)
                 state.packManager[action.payload.index] = updatePack
             })
     }

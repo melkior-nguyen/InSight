@@ -9,7 +9,6 @@ import { useAppSelector, useAppDispatch } from './hook';
 import { Navbar, Header } from './components';
 //pages
 import { Home, TicketMn, Ticketcheck, Setting } from './pages';
-import { fetchFamillyTickets } from './redux/ticketslice';
 
 function App() {
   

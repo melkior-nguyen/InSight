@@ -1,14 +1,126 @@
 .home {
-    border: 1px solid #333;
-    display: flex;
+    display       : flex;
     flex-direction: column;
 }
 
-.home_dashboard-top {
-    border: 1px solid #333;
-    height: 100%;
+/* line chat */
+.home_line-chart {
+    height        : 100%;
+    display       : flex;
+    flex-direction: column;
+    align-items   : flex-start;
+}
+
+.line_chart-nav {
+    width          : 100%;
+    display        : flex;
+    justify-content: space-between;
+    margin-bottom  : 24px;
+}
+
+.line_chart-nav span {
+    font-size  : 1.8rem;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+
+.line_chart-wrap {
+    width: 100%;
+}
+
+.line_chart-revenue {
+    width         : 100%;
+    display       : flex;
+    flex-direction: column;
+    align-items   : flex-start;
+    margin-top    : 2rem;
+}
+
+.line_chart-revenue span {
+    font-size  : 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 500;
+}
+
+.line_chart-revenue strong {
+    font-size  : 2.4rem;
+    line-height: 3rem;
+    font-weight: 700;
+}
+
+/* doughnut chat */
+.home_doughnut-chart {
+    margin-top: 2rem;
+    flex   : 1;
+    display: flex;
+}
+
+.doughnut_chart-nav,
+.doughnut_chart-note {
+    display: flex;
+
+}
+
+.doughnut_chart-nav {
+    flex-direction : column;
+    justify-content: flex-start;
+    align-items    : flex-start;
+}
+
+
+
+.doughnut_chart-note {
+    flex-direction : column;
+    justify-content: center;
+    gap: 1.6rem;
+}
+
+.doughnut_chart-note span {
+    font-size  : 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 400;
+    position   : relative;
+    padding: 0 1rem;
+    width: max-content;
+}
+
+.doughnut_chart-note span::before {
+    content : '';
+    display : block;
+    height  : 100%;
+    aspect-ratio: 2;
+    position: absolute;
+    top     : 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    border-radius: 4px;
+}
+
+.doughnut_chart-note span:first-child::before{
+    background-color: #4F75FF;
+} 
+.doughnut_chart-note span:nth-child(2)::before{
+    background-color: #FF8A48;
+} 
+
+.doughnut_chart-wrap {
     flex: 1;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    max-width: calc(100% * 2/3);
+}
+
+.doughnut_chart {
+    width: 30%;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+}
+.doughnut_chart span {
+    font-size  : 1.8rem;
+    line-height: 2.8rem;
+    font-weight: 600;
 }

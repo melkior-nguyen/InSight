@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import './ticketmn.css'
 import { Search } from '../../components'
-import Familly from './FamillyMn'
-import Event from './EventMn'
+import Familly from './pack/FamillyMn'
+import Event from './pack/EventMn'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FiFilter } from 'react-icons/fi'
-import FilterMn from './FilterMn'
+import FilterMn from './pack/filter/FilterMn'
 
 function TicketMn() {
   const [pack, setPack] = useState<string>('familly')
@@ -56,7 +56,7 @@ function TicketMn() {
         </div>
       </div>
 
-      {filterLayout && <FilterMn handleCloseBtn={() => { setFilterLayout(false) }} handleFilterInfo={( data: { rangeDate: string[],status: string, gates: string[] }) => { setFilterInfo(data) }} />}
+      {filterLayout && <FilterMn handleCloseBtn={() => { setFilterLayout(false) }} handleFilterInfo={(data: { rangeDate: string[], status: string, gates: string[] }) => { setFilterInfo(data) }} />}
       {pack === 'familly' && <Familly numberSearch={numberSearch} filterInfo={filterInfo} />}
       {pack === 'event' && <Event numberSearch={numberSearch} filterInfo={filterInfo} />}
 

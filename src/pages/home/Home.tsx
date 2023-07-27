@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './home.css'
 import { DatePicker, DatePickerProps } from 'antd'
-import LineChart from './LineChart'
+import LineChart from './Chart/LineChart'
 import dayjs, { Dayjs } from 'dayjs'
 import { useAppDispatch } from '../../hook'
 import { addEventTickets, addFamillyTickets, fetchEventTickets, fetchFamillyTickets } from '../../redux/ticketslice'
-import DoughnutChart from './DoughnutChart'
+import DoughnutChart from './Chart/DoughnutChart'
 
 
 export type weekListType = {
@@ -67,7 +67,7 @@ function Home() {
     setWeekList(weeks)
   }
 
- 
+
 
   return (
     <div className='home main_content'>

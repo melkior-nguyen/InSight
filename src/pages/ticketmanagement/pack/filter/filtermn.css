@@ -21,7 +21,7 @@
     align-items     : center;
     position        : relative;
     border-radius   : 1.6rem;
-    animation: layoutAnimation 0.25s ease-in-out;
+    animation       : layoutAnimation 0.25s ease-in-out;
 }
 
 

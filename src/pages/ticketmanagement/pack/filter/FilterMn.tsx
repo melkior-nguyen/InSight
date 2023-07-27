@@ -43,16 +43,16 @@ function FilterMn({ handleCloseBtn, handleFilterInfo }: any) {
         }
     }
 
-    const handleDateStart = (date: any, dateString : string) => {
+    const handleDateStart = (date: any, dateString: string) => {
         setDateStart(dateString)
     }
-    const handleDateEnd = (date: any, dateString : string) => {
+    const handleDateEnd = (date: any, dateString: string) => {
         setDateEnd(dateString)
     }
     const handleFilterSubmit = (e: any) => {
         e.preventDefault()
         const filterData = {
-            rangeDate: [dateStart,dateEnd],
+            rangeDate: [dateStart, dateEnd],
             status: statusRadio,
             gates: gateCheckbox
         }

@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import './ticketcheck.css'
 import { Search } from '../../components'
 import { AiOutlineSearch } from 'react-icons/ai'
-import FamillyCheck from './FamillyCheck'
-import EventCheck from './EventCheck'
+import FamillyCheck from './pack/FamillyCheck'
+import EventCheck from './pack/EventCheck'
 import { DatePicker } from 'antd'
 
 

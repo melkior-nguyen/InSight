@@ -5,7 +5,7 @@ import { DatePicker, TimePicker } from 'antd'
 function Add({ handleAddClose }: any) {
     return (
         <div className='setting_add'>
-            <form className='setting_add-form' onSubmit={(e)=> e.preventDefault()}>
+            <form className='setting_add-form' onSubmit={(e) => e.preventDefault()}>
                 <h3>Thêm gói vé</h3>
                 <div className="setting_add-info">
                     <div className="add_info-name">
@@ -17,15 +17,15 @@ function Add({ handleAddClose }: any) {
                     <div className="add_date-buy">
                         <span className='add_span'>Ngày áp dụng</span>
                         <div className="add_date-wrap">
-                            <DatePicker placeholder='Chọn ngày'/>
-                            <TimePicker placeholder='Chọn giờ'/>
+                            <DatePicker placeholder='Chọn ngày' />
+                            <TimePicker placeholder='Chọn giờ' />
                         </div>
                     </div>
                     <div className="add_date">
                         <span className='add_span'>Ngày hết hạn</span>
                         <div className="add_date-wrap">
-                            <DatePicker placeholder='Chọn ngày'/>
-                            <TimePicker placeholder='Chọn giờ'/>
+                            <DatePicker placeholder='Chọn ngày' />
+                            <TimePicker placeholder='Chọn giờ' />
                         </div>
                     </div>
                 </div>

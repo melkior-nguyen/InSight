@@ -27,17 +27,17 @@ input[type='checkbox'] {
     border-radius  : 4px;
     color          : #fff;
     position       : relative;
-    cursor: pointer;
+    cursor         : pointer;
 }
 
 input[type='checkbox']::before {
-    display : none;
-    content : '\2713';
-    position: absolute;
-    top     : 50%;
-    left    : 50%;
-    color   : #fff;
-    transform: translate(-50%, -50%);
+    display    : none;
+    content    : '\2713';
+    position   : absolute;
+    top        : 50%;
+    left       : 50%;
+    color      : #fff;
+    transform  : translate(-50%, -50%);
     font-weight: 700;
 }
 
@@ -48,7 +48,7 @@ input[type='checkbox']:checked {
 }
 
 input[type='checkbox']:checked::before {
-    display: flex;
-    align-items: center;
+    display        : flex;
+    align-items    : center;
     justify-content: center;
 }

@@ -32,14 +32,15 @@
     font-weight: 600 !important;
     line-height: 26px;
     color      : #1E0D03 !important;
-    padding: 0rem 1.2rem !important;
+    padding    : 0rem 1.2rem !important;
 }
 
 /* row */
 .ant-table-row {
-    height: 46px !important;
+    height           : 46px !important;
     /* pointer-events: none; */
 }
+
 .ant-table-row:nth-child(even) {
     background-color: #F7F8FB;
 }
@@ -51,6 +52,7 @@
     line-height: 22px;
     color      : #1E0D03 !important;
 }
+
 /* main pagination */
 .ant-table-wrapper ul {
     height         : 2rem;
@@ -99,18 +101,22 @@
 .ant-picker {
     height: 3rem;
 }
+
 .ant-picker input {
     font-size: 1.2rem !important;
-    color: #A5A8B1 !important;
-    width: max-content !important;
+    color    : #A5A8B1 !important;
+    width    : max-content !important;
 }
+
 .ant-picker input {
     min-width: 65px !important;
-    width: 65px !important;
+    width    : 65px !important;
 }
+
 .ant-picker input::placeholder {
     color: #A5A8B1 !important;
 }
+
 .ant-picker-suffix {
     color: #FF993C !important
 }

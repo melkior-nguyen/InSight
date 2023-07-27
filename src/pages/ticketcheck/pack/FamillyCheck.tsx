@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import './packcheck.css'
 import { Table } from 'antd'
-import {dataType } from '../../testdata'
+import { dataType } from '../../../testdata'
 import type { ColumnsType } from 'antd/es/table'
-import { useAppDispatch, useAppSelector } from '../../hook'
-import { fetchFamillyTickets } from '../../redux/ticketslice'
+import { useAppDispatch, useAppSelector } from '../../../hook'
+import { fetchFamillyTickets } from '../../../redux/ticketslice'
 
 function FamillyCheck({ numberSearch, filterInfo }: any) {
   const famillyData = useAppSelector(state => state.tickets.ticketsFamillyList)
@@ -94,7 +94,7 @@ function FamillyCheck({ numberSearch, filterInfo }: any) {
       <Table
         columns={columns}
         dataSource={famillyData}
-        pagination={{ pageSize: 10, showSizeChanger: false  }} />
+        pagination={{ pageSize: 10, showSizeChanger: false }} />
     </div>
   )
 }

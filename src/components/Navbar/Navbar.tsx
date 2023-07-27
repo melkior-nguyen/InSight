@@ -60,11 +60,9 @@ function Navbar() {
           </div>
         </Link>
 
-
-
       </div>
-        <button className='add_ticket-btn' onClick={()=> setAddTicketLayout(true)}>+</button>
-        {addTicketLayout && <TicketAdd handleCloseAddTicket ={()=> setAddTicketLayout(false)}/>}
+      <button className='add_ticket-btn' onClick={() => setAddTicketLayout(true)}>+</button>
+      {addTicketLayout && <TicketAdd handleCloseAddTicket={() => setAddTicketLayout(false)} />}
     </div>
   )
 }

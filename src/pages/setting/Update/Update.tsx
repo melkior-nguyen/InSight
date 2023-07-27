@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import './update.css'
 import { DatePicker, TimePicker } from 'antd'
 import { Dayjs } from 'dayjs'
-import { useAppDispatch, useAppSelector } from '../../hook'
-import { updatePackManager } from '../../redux/ticketslice'
+import { useAppDispatch, useAppSelector } from '../../../hook'
+import { updatePackManager } from '../../../redux/ticketslice'
 
 type updateType = {
     code: string,

@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-.ticketmn_pack-options{
+.ticketmn_pack-options {
     margin-bottom  : 2.4rem;
     display        : flex;
     justify-content: flex-start;
@@ -43,6 +43,3 @@
         transform-origin: left;
     }
 }
-
-
-

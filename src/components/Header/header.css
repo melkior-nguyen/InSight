@@ -41,6 +41,6 @@
 }
 
 .header_info-icon:hover svg {
-    color: #FFB800;
+    color     : #FFB800;
     transition: all 0.25s ease;
 }

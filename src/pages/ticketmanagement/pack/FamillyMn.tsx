@@ -1,26 +1,28 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './packmn.css'
 import { Table } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
-import { dataType } from '../../testdata'
+import { dataType } from '../../../testdata'
 import { GoDotFill } from 'react-icons/go'
-import { useAppDispatch, useAppSelector } from '../../hook'
-import { fetchEventTickets } from '../../redux/ticketslice'
+import { useAppDispatch, useAppSelector } from '../../../hook'
+import { fetchFamillyTickets } from '../../../redux/ticketslice'
 
-function Event({ numberSearch, filterInfo }: any) {
-  const eventData = useAppSelector(state => state.tickets.ticketsEventList)
+
+function Familly({ numberSearch, filterInfo }: any) {
+
+  const famillyData = useAppSelector(state => state.tickets.ticketsFamillyList)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    dispatch(fetchEventTickets())
+    dispatch(fetchFamillyTickets())
   }, [dispatch])
 
   const columns: ColumnsType<dataType> = [
     {
       key: 'index',
       title: 'STT',
-      render: (text, record): any => {
-        return eventData.indexOf(record) + 1
+      render: (value): any => {
+        return famillyData.indexOf(value) + 1
       }
     },
     {
@@ -38,14 +40,6 @@ function Event({ numberSearch, filterInfo }: any) {
           return record.number.toString().indexOf(value.toString()) !== -1
         }
         else return record.number
-      }
-    },
-    {
-      key: 'type',
-      title: 'Tên Sự Kiện',
-      dataIndex: 'type',
-      render: (type): any => {
-        if (type) return 'Hội chợ triển lãm tiêu dùng 2023'
       }
     },
     {
@@ -92,7 +86,7 @@ function Event({ numberSearch, filterInfo }: any) {
         const convertDate = `${dateArr[2]}-${dateArr[1]}-${dateArr[0]}` // yyyy-mm-dd
 
         //incase no set filter
-        if (value == 'undefined' || rangeArr[0]==='' && rangeArr[1]=== '') return record.date
+        if (value == 'undefined' || rangeArr[0] === '' && rangeArr[1] === '') return record.date
         //filter with range date
         if (convertDate <= rangeArr[1] && convertDate >= rangeArr[0]) return record.date
       }
@@ -106,7 +100,7 @@ function Event({ numberSearch, filterInfo }: any) {
       key: 'gate',
       title: 'Cổng Check - In',
       dataIndex: 'gate',
-      render: (gate): any => {
+      render: (gate: number): string => {
         if (gate === 1) return 'Cổng 1'
         if (gate === 2) return 'Cổng 2'
         if (gate === 3) return 'Cổng 3'
@@ -129,14 +123,15 @@ function Event({ numberSearch, filterInfo }: any) {
     },
   ]
 
+
   return (
     <div className='ticketmn_pack'>
       <Table
         columns={columns}
-        dataSource={eventData}
-        pagination={{ pageSize: 9, showSizeChanger: false  }} />
+        dataSource={famillyData}
+        pagination={{ pageSize: 9, showSizeChanger: false }} />
     </div>
   )
 }
 
-export default Event
+export default Familly

@@ -3,8 +3,8 @@ import { Chart, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Line } from 'react-chartjs-2';
 import { CategoryScale, LinearScale, PointElement, LineElement, Title, Filler } from 'chart.js';
 import dayjs, { Dayjs } from 'dayjs';
-import { weekListType } from './Home';
-import { useAppSelector } from '../../hook';
+import { weekListType } from '../Home';
+import { useAppSelector } from '../../../hook';
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Filler, ArcElement, Tooltip, Legend)
 
 const createGradient = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Doughnut } from 'react-chartjs-2'
-import { useAppSelector } from '../../hook'
+import { useAppSelector } from '../../../hook'
 import dayjs from 'dayjs'
 
 function DoughnutChart({ searchMonth }: { searchMonth: string }) {

@@ -6,10 +6,10 @@ import { FiFilter, FiEdit } from 'react-icons/fi'
 import { Table } from 'antd'
 import { ColumnsType } from 'antd/es/table'
 import { GoDotFill } from 'react-icons/go'
-import Update from './Update'
+import Update from './Update/Update'
 import { useAppDispatch, useAppSelector } from '../../hook'
 import { fetchPackManager } from '../../redux/ticketslice'
-import Add from './Add'
+import Add from './Add/Add'
 
 type dataType = {
   code: string,

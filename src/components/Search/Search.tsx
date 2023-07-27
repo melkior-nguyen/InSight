@@ -6,7 +6,7 @@ function Search(props: any) {
 
     return (
         <div className='search'>
-            <input type="text" placeholder={props.plholder} onChange={(e)=> handleSearch(e.target.value)}/>
+            <input type="text" placeholder={props.plholder} onChange={(e) => handleSearch(e.target.value)} />
             <div className="search_icon">
                 {props.icon}
             </div>

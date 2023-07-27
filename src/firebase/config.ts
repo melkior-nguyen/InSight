@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore} from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDbe7uBPKI56MHBfFF4KrZgaiax0sm_RzU",
@@ -7,7 +7,7 @@ const firebaseConfig = {
   projectId: "alta-cms-ticket-sales",
   storageBucket: "alta-cms-ticket-sales.appspot.com",
   appId: "1:1727390547:web:2d8c3f111a52db563177a6"
-  
+
 };
 
 // Initialize Firebase

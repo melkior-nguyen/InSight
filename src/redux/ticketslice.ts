@@ -34,7 +34,6 @@ export const fetchPackManager = createAsyncThunk(
     })
 
 // add doc to collection
-
 export const addFamillyTickets = createAsyncThunk(
     'tickets/addFamillyTickets',
     async (newTickets: any) => {
@@ -64,8 +63,6 @@ export const updatePackManager = createAsyncThunk(
         return updatedPack
     }
 )
-
-
 
 // Tickets Slice
 const ticketSlice = createSlice({
@@ -97,6 +94,24 @@ const ticketSlice = createSlice({
                 const updatePack = { ...action.payload }
                 delete updatePack.index
                 state.packManager[action.payload.index] = updatePack
+            })
+            .addCase(fetchFamillyTickets.rejected, (state, action) => {
+                console.error('Có lỗi xảy ra')
+            })
+            .addCase(fetchEventTickets.rejected, (state, action) => {
+                console.error('Có lỗi xảy ra')
+            })
+            .addCase(fetchPackManager.rejected, (state, action) => {
+                console.error('Có lỗi xảy ra')
+            })
+            .addCase(addFamillyTickets.rejected, (state, action) => {
+                console.error('Có lỗi xảy ra')
+            })
+            .addCase(addEventTickets.rejected, (state, action) => {
+                console.error('Có lỗi xảy ra')
+            })
+            .addCase(updatePackManager.rejected, (state, action) => {
+                console.error('Có lỗi xảy ra')
             })
     }
 })

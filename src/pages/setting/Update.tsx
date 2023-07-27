@@ -91,7 +91,6 @@ function Update({ handleUpdateClose, updateData, index }: any) {
         handleUpdateClose()
     }
 
-
     return (
         <div className='setting_update'>
             <form className="setting_update-form" onSubmit={(e) => handleUpdateSubmit(e)}>

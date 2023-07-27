@@ -7,6 +7,7 @@ export type dataType = {
     gate: number,
     checked: boolean,
     type: string,
-    price: number
+    price: number,
+    disable: boolean
 }
 

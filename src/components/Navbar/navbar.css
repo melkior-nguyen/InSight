@@ -1,5 +1,6 @@
 .nav {
     height: 100%;
+    position: relative;
 }
 
 .nav_container {
@@ -83,4 +84,22 @@
     font-weight    : 500;
     text-decoration: none;
     color          : var(--text-color);
+}
+
+/*  add ticket */
+.add_ticket-btn {
+    position: fixed;
+    left: 3.3rem;
+    bottom: 2rem;
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border: 1px solid #929292;
+    color: #929292;
+    border-radius: 50%;
+    cursor: pointer;
 }

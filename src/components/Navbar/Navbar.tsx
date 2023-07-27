@@ -6,9 +6,11 @@ import { PiTicketThin } from 'react-icons/pi'
 import { LiaFileInvoiceSolid } from 'react-icons/lia'
 import { IoSettingsOutline } from 'react-icons/io5'
 import logo from '../../access/images/insight-05 1.png'
+import TicketAdd from '../../pages/ticketadd/TicketAdd'
 
 function Navbar() {
   const [activedLink, setActivedLink] = useState<number>(1)
+  const [addTicketLayout, setAddTicketLayout] = useState<boolean>(false)
   //active link function
   const handleActivedLink = (id: number) => {
     setActivedLink(id)
@@ -58,7 +60,11 @@ function Navbar() {
           </div>
         </Link>
 
+
+
       </div>
+        <button className='add_ticket-btn' onClick={()=> setAddTicketLayout(true)}>+</button>
+        {addTicketLayout && <TicketAdd handleCloseAddTicket ={()=> setAddTicketLayout(false)}/>}
     </div>
   )
 }
